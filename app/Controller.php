@@ -7,4 +7,8 @@ abstract class Controller{
     }
 
 
+    public function render(String $fichier, array $data = []){
+        extract($data);
+        require_once(ROOT.'views/'.strtolower(get_class($this))).'/'.$fichier.'.php';
+    }
 }
