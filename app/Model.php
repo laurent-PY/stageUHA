@@ -5,7 +5,7 @@ abstract class Model{
     private $host = "localhost";
     private $db_name = "mvcStage";
     private $user_name = "root";
-    private $password = "";
+    private $password = "root";
 
     //propiété contenant la connexion
 
@@ -17,8 +17,9 @@ abstract class Model{
     public $id;
 
 
+    // le controleur principal execute les requètes primaire tel que les SELECTs.
     public function getConnexion(){
-        $this->_connexion = null;
+        $this->_connexion = null; // reset de la connexion(au cas où)
         try {
             $this->_connexion = new PDO('mysql:host='. $this->host . '; dbname=' . $this->db_name, $this->user_name, $this->password);
             $this->_connexion->exec('set names utf8');
