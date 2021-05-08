@@ -6,5 +6,4 @@ class Activites extends Controller{
         $activites = $this->Activite->getAll();
         var_dump($activites);
     }
-    
 }
