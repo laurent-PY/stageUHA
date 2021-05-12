@@ -1,28 +1,6 @@
 RewriteEngine On
-RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?p=$1
 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-#RewriteEngine On : permet de démarrer la réécriture d'URL
-#RewriteRule : permet de définir une règle de réécriture d'URL et fonctionne comme suit
-#^([a-zA-Z0-9\-\_\/]*)$ : il s'agit des différents caractères pris en compte dans l'URL pour sa réécriture
-#a-z : caractères minuscules
-#A-Z : caractères majuscules
-#0-9 : chiffres
-#\-\_\/ : tiret, underscore et / (caractère \ pour l'échappement)
-#Tout ceci entre ^( pour le début de chaîne et )$ pour la fin de chaîne
-#index.php?p=$1 : $1 contiendra le résultat de la réécriture notre chaîne
-
-#______________________________________________________________
-#
-#       Exemple
-#
-#        Que contiendra notre URL finale ?
-#
-#            http://url_du_site/articles/lire
-#
-#        donnera
-#
-#            http://url_du_site/index.php?p=articles/lire
-#
-#
-#______________________________________________________________
+RewriteRule ^(.*)$ index.php?url=$1
