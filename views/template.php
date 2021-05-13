@@ -56,7 +56,9 @@
         </nav>
     </header>
     <main>
-        <?= $content ?>
+        <div class="container">
+            <?= $content ?>
+        </container>
     </main>
     <div class="footer-basic">
         <footer>

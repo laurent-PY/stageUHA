@@ -1,6 +1,11 @@
+.container{
+  margin-top: 45px;
+  display: flex;
+  
+}
 .footer-basic {
-  padding:40px 0;
-  background-color:#ffffff;
+  padding:5px 0;
+  background-color:#f8f9fa;
   color:#4b4c4d;
   width: 100%;
   position: fixed;
