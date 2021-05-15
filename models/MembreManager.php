@@ -11,6 +11,6 @@ class MembreManager extends Model
     {
         var_dump($newMembre);
 
-        //TODO a terminer req insert dans la base de l'objet.
+        //TODO a terminer requete insert dans la base de l'objet.
     }
 }
