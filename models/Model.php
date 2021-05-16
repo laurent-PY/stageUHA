@@ -10,7 +10,7 @@ abstract class Model
         self::$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
     //recupère la connexion à la bdd
-    protected function getBdd()
+    protected static function getBdd()
     {
         if(self::$bdd == null)
             self::setBdd();

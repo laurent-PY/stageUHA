@@ -1,14 +1,18 @@
 <?php $this->_t = 'Register';
 include_once('./models/MembreManager.php');
 
-
-
-if(isset($_POST['register'])){
+// TODO terminer le contrôle des champs, essayer de faire passer par le methode dans MembreManager::chekFields()
+if(empty($_POST['nom']))
+{
+    echo'Remplir tout les champs SVP';
+}else
+{
+    if(isset($_POST['register'])){
     $newMembre = new Membre();
     $newMembre->setNom($_POST['nom']);
     $newMembre->setPrenom($_POST['prenom']);
     $newMembre->setEmail($_POST['mail']);
-    $newMembre->setPassword($_POST['password']);
+    $newMembre->setPass($_POST['pass']);
     $newMembre->setDateNaissance($_POST['dateDeNaissance']);
     $newMembre->setAdresse($_POST['adresse']);
     $newMembre->setNomVille($_POST['nomVille']);
@@ -18,6 +22,8 @@ if(isset($_POST['register'])){
     $newMembre->setTelFixe($_POST['telFixe']);
     MembreManager::insertMembre($newMembre);
 };
+}
+
 
 
 ?>
@@ -46,8 +52,8 @@ if(isset($_POST['register'])){
 
     <!-- password input -->
     <div class="form-outline mb-4">
-        <input type="password" id="password" name="password" class="form-control" />
-        <label class="form-label" for="password">Mot de passe</label>
+        <input type="password" id="pass" name="pass" class="form-control" />
+        <label class="form-label" for="pass">Mot de passe</label>
     </div>
 
     <!-- verify password input -->

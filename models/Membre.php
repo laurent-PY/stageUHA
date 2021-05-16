@@ -6,7 +6,7 @@ class Membre
     private $_nom;
     private $_prenom;
     private $_email;
-    private $_password;
+    private $_pass;
     private $_dateNaissance;
     private $_adresse;
     private $_nomVille;
@@ -20,7 +20,6 @@ class Membre
     {
       
     }
-   
 
     public function getId(){return $this->_id;}
 
@@ -33,8 +32,8 @@ class Membre
     public function getEmail(){return $this->_email;}
     public function setEmail($email){$this->_email = $email;}
 
-    public function getPassword(){return $this->_password;}
-    public function setPassword($password){$this->_password = $password;}
+    public function getPass(){return $this->_pass;}
+    public function setPass($pass){$this->_pass = $pass;}
 
     public function getDateNaissance(){return $this->_dateNaissance;}
     public function setDateNaissance($dateNaissance){$this->_dateNaissance = $dateNaissance;}
