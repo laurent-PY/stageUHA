@@ -14,6 +14,11 @@ body{
   flex-wrap: wrap;
 }
 
+.titre{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .connexion{
   margin: auto;
 }

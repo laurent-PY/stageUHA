@@ -22,6 +22,7 @@ class MembreManager extends Model
     $telPortable = $newMembre->getTelPortable();
     $telFixe = $newMembre->getTelFixe();
 
+
     $bdd = Model::getBdd();
 
     $requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe ) VALUES (?, ?, ?, PASSWORD(?), ?, ?, ?, ?, ?, ?, ?)");
@@ -40,8 +41,28 @@ class MembreManager extends Model
         ));       
     }
 
-    public static function chekFields()
+    public static function chekFields(Membre $newMembre)
     {
-        
+        $checkFields = true;
+        if($newMembre->getNom() == "" ||
+            $newMembre->getPrenom() == "" ||
+            $newMembre->getEmail() == "" ||
+            $newMembre->getPrenom() == "" ||
+            $newMembre->getDateNaissance() == "" ||
+            $newMembre->getAdresse() == "" ||
+            $newMembre->getNomVille() == "" ||
+            $newMembre->getCpVille() == "" ||
+            $newMembre->getPays() == "" ){
+            $checkFields = false;
+        }
+        return $checkFields;
+    }
+
+    public static function checkPasssword(Membre $newMembre){
+        $checkPass = true;
+        if($newMembre->getPass() != $newMembre->getCheckPass()){
+            $checkPass = false;
+        }
+        return $checkPass;
     }
 }

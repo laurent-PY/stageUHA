@@ -7,6 +7,7 @@ class Membre
     private $_prenom;
     private $_email;
     private $_pass;
+    private $_checkPass;
     private $_dateNaissance;
     private $_adresse;
     private $_nomVille;
@@ -34,6 +35,9 @@ class Membre
 
     public function getPass(){return $this->_pass;}
     public function setPass($pass){$this->_pass = $pass;}
+
+    public function getCheckPass(){return $this->_checkPass;}
+    public function setCheckPass($checkPass){$this->_checkPass = $checkPass;}
 
     public function getDateNaissance(){return $this->_dateNaissance;}
     public function setDateNaissance($dateNaissance){$this->_dateNaissance = $dateNaissance;}
