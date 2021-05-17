@@ -1,13 +1,9 @@
 <?php $this->_t = 'Register';
 include_once('./models/MembreManager.php');
 
-// TODO terminer le contrôle des champs, essayer de faire passer par le methode dans MembreManager::chekFields()
-if(empty($_POST['nom']))
-{
-    echo'Remplir tout les champs SVP';
-}else
-{
-    if(isset($_POST['register'])){
+// TODO terminer le contrôle des champs, essayer de faire passer par la methode dans MembreManager::chekFields()
+
+if(isset($_POST['register'])){
     $newMembre = new Membre();
     $newMembre->setNom($_POST['nom']);
     $newMembre->setPrenom($_POST['prenom']);
@@ -22,7 +18,6 @@ if(empty($_POST['nom']))
     $newMembre->setTelFixe($_POST['telFixe']);
     MembreManager::insertMembre($newMembre);
 };
-}
 
 
 
@@ -46,7 +41,7 @@ if(empty($_POST['nom']))
     
     <!-- Email input -->
     <div class="form-outline mb-4">
-        <input type="text" id="mail" name="mail" class="form-control" />
+        <input type="email" id="mail" name="mail" class="form-control" />
         <label class="form-label" for="mail">E-mail</label>
     </div>
 
