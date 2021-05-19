@@ -16,9 +16,8 @@
 </head>
 <body>
 <div class="fixed-top divNavBar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Praxis-Alsace(Logo)</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,14 +32,12 @@
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/login">Connexion</a>
                     </li>
-
-
                 </ul>
-
             </div>
         </div>
     </nav>
 </div>
+<img class="logoTemplate" src="assets/img/logo.png" alt="" width="400px">
 
 <div class="mainPos">
     <main>
@@ -54,7 +51,7 @@
 </div>
 <div class="divFooter fixed-bottom">
     <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center p-3">
             © 2020 Copyright : <a class="text-dark" href="#">L4urentTest.com</a>
         </div>
     </footer>

@@ -1,3 +1,5 @@
 Pour les liens de la Bdd --> ./assets/img/01.jpg
 
 INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Séminaire","./assets/img/02.jpg","PHP introduction =)","Ici nous allons apprendre les rudiments du design pattern MVC","150","2021-02-02","2001-02-02");
+
+#083b4c    #dea702    #edeae3    #fffffff

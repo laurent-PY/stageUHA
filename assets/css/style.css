@@ -9,22 +9,73 @@ body{
 .cardContainer{
   padding-bottom: 40px;
 }
-.blockContent{
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .titre{
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  border: 1px solid #083b4c;
+  color: white;
+  background-color: #083b4c;
+}
+
+.card-body{
+  color: #083b4c;
+}
+
+label{
+  color: #083b4c;
+}
+.form-control{
+  color: #083b4c;
+}
+.navbar{
+  background-color: #F1C40F;
+}
+.text-center{
+  background-color: #F1C40F;
+}
+
+.alertPopup{
+  height: 7vh;
+  position: absolute;
+  top: 150px;
+  right: 50px;
 }
 
 .connexion{
   margin: auto;
 }
 
+.logoTemplate{
+  width: 190px;
+  position: absolute;
+  top: 90px;
+  left: 15px;
+}
+.btmCard{
+  position: absolute;
+  bottom: 12px;
+  width: 80%;
+}
+
+.blockContent{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px 2px;
+  padding-bottom: 25px;
+}
+
+.blockMembre{
+  margin: auto;
+}
+.blockLogin{
+  margin: auto;
+}
+
 form{
   margin: auto;
+  margin-bottom: 150px;
 }
 .mainPos{
   margin: 100px 0 250px 0;
@@ -38,6 +89,7 @@ form{
 }
 
 .divFooter{
+  margin-top: 5px;
   height: 5vh;
 }
 
