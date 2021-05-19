@@ -1,4 +1,25 @@
 <?php
+include_once('./models/MembreManager.php');
+if(isset($_POST['connexion'])) {
+    $membre = new Membre();
+    $membre->SetEmail($_POST['email']);
+    $membre->setPass($_POST['pass']);
+    if(LoginManager::checkLogin($membre) == true){
+        ?>
+        <div class="alert alert-success alertPopup" role="alert" style="height: 7vh">
+            Utilistateur authentifié.
+        </div>
+        <?php
+    }else{
+        ?>
+        <div class="alert alert-warning alertPopup" role="alert" style="height: 7vh">
+            Mot de passe ou email incorrect.
+        </div>
+        <?php
+
+    }
+
+}
 ?>
 
 <div class="blockLogin">
@@ -10,13 +31,13 @@
             <div class="row mb-4">
                 <div class="col">
                     <div class="form-outline">
-                        <input type="text" id="email" name="email" class="form-control" />
+                        <input type="text" id="email" name="email" class="form-control" value="<?php if (isset($_POST['email'])){echo $_POST['email'];} ?>" />
                         <label class="form-label" for="email">Email</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-outline">
-                        <input type="password" id="password" name="password" class="form-control" />
+                        <input type="password" id="pass" name="pass" class="form-control" />
                         <label class="form-label" for="prenom">Password</label>
                     </div>
                 </div>
