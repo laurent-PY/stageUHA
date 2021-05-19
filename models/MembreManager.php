@@ -21,9 +21,10 @@ class MembreManager extends Model
         $pays = $newMembre->getPays();
         $telPortable = $newMembre->getTelPortable();
         $telFixe = $newMembre->getTelFixe();
+        $organisateur = $newMembre->getOrganisateur();
         $bdd = Model::getBdd();
-        //$requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe ) VALUES (?, ?, ?, PASSWORD(?), ?, ?, ?, ?, ?, ?, ?)");
+        $requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe, organisateur ) VALUES (?, ?, ?, PASSWORD(?), ?, ?, ?, ?, ?, ?, ?, ?)");
+
         $requete -> execute(array(
             $nom,
             $prenom,
@@ -35,8 +36,11 @@ class MembreManager extends Model
             $cpVille,
             $pays,
             $telPortable,
-            $telFixe
+            $telFixe,
+            $organisateur
         ));
+
+        header("location:accueil");
     }
 
     public static function chekFields(Membre $newMembre)
