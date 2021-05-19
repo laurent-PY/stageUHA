@@ -2,7 +2,7 @@
 
 class Membre
 {
-    private $_id;
+    private $_idMembre;
     private $_nom;
     private $_prenom;
     private $_email;
@@ -22,7 +22,7 @@ class Membre
       
     }
 
-    public function getId(){return $this->_id;}
+    public function getId(){return $this->_idMembre;}
 
     public function getNom(){return $this->_nom;}
     public function setNom($nom){$this->_nom = $nom;}

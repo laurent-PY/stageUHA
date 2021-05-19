@@ -1,6 +1,4 @@
 <?php
-
-
 class LoginManager extends Model
 {
     public function getLogin()
@@ -9,21 +7,27 @@ class LoginManager extends Model
     }
 
 
-    public static function checkLogin($membre){
+    public static function checkLogin(Membre $membre)
+    {
         $bdd = Model::getBdd();
         $email = $membre->getEmail();
         $pass = $membre->getPass();
-        $requete = $bdd -> prepare("SELECT * FROM membre WHERE email = ? AND pass = PASSWORD(?)");
-        $requete->execute(array($email, $pass));
+        $requete = $bdd->prepare("SELECT * FROM membre WHERE email = ? AND pass = PASSWORD(?)");
+        $requete->execute(array(
+            $email, $pass));
 
-        if ($requete -> rowCount() > 0) {
-            $requete->fetch();
+        if ($requete->rowCount() > 0) {
+            $rows = $requete->fetchall(PDO::FETCH_ASSOC);
+
+            foreach ($rows as $row) {
+                $email = $row["email"];
+            }
             session_start();
-            $_SESSION["id"] = $membre->getId();
-            $_SESSION["email"] = $membre->getEmail();
-            return true;
-        }else
-            return false;
+            $_SESSION['email'] = $email;
+
+            header("location:accueil");
+        }
     }
 }
+
 

@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../assets/script/scripts.js"></script>
+    <script type="text/javascript" src=""></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title><?php if(isset($_POST['t'])){
             $t = $_POST['t'];}
@@ -27,10 +32,31 @@
                         <a class="nav-item nav-link active" href="http://localhost/StageMaiPHP/">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/membre">S'inscrire</a>
+                        <?php if(!isset($_SESSION['email'])) {
+                            ?>
+                            <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/membre">S'inscrire</a>
+                            <?php
+                        }?>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/login">Connexion</a>
+                        <?php if(isset($_SESSION['email'])) {
+                            ?>
+                                <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/logout">Déconnexion</a>
+                            <?php
+                        }else
+                        { ?>
+                            <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/login">Connexion</a>
+                        <?php } ?>
+                    </li>
+                    <li class="nav-item">
+                        <?php if(isset($_SESSION['email'])) {
+                            ?>
+                            <a class="nav-item nav-link" href="">Mon Compte</a>
+                            <?php
+                        }?>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link"><?php if(isset($_SESSION['email'])){?> Bonjour, <?= $_SESSION['email'] ?><?php } ?></a>
                     </li>
                 </ul>
             </div>

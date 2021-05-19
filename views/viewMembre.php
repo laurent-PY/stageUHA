@@ -1,4 +1,6 @@
-<?php $this->_t = 'Register';
+<?php
+$this->_t = 'Register';
+
 include_once('./models/MembreManager.php');
 
 // TODO terminer le contrôle des champs, essayer de faire passer par la methode dans MembreManager::chekFields()

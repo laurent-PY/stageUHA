@@ -1,5 +1,5 @@
 <?php
-include_once('./models/MembreManager.php');
+include_once('./models/LoginManager.php');
 if(isset($_POST['connexion'])) {
     $membre = new Membre();
     $membre->SetEmail($_POST['email']);
@@ -16,9 +16,7 @@ if(isset($_POST['connexion'])) {
             Mot de passe ou email incorrect.
         </div>
         <?php
-
     }
-
 }
 ?>
 

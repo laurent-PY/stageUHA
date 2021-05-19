@@ -1,4 +1,8 @@
-<?php $this->_t = 'Accueil MVC';
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$this->_t = 'Accueil MVC';
 if(isset($_POST['activites'])){
     $activites = $_POST['activites'];
 }
@@ -22,7 +26,15 @@ if(isset($_POST['activites'])){
                             <p class="card-text"><?= $activite->getDateDebut() ?></p>
                             <p class="card-text"><?= $activite->getDatefin() ?></p>
                             <p class="card-text"><?= $activite->getOrganisateur() ?></p>
-                            <a href="#" class="btmCard btn btn-outline-secondary ">Consultez l'activité</a>
+                            <?php if(isset($_SESSION['email'])) {
+                                ?>
+                                <a href="#" class="btmCard btn btn-outline-secondary ">Participer</a>
+                                <?php
+                            }else
+                            { ?>
+<!--                            <p>Pour participer aux événement vous devez être authentifié.</p>-->
+                                <a href="#" class="btmCard btn btn-outline-secondary ">Consulter</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
