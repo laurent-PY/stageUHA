@@ -12,9 +12,12 @@ class LoginManager extends Model
         $bdd = Model::getBdd();
         $email = $membre->getEmail();
         $pass = $membre->getPass();
-        $requete = $bdd->prepare("SELECT * FROM membre WHERE email = ? AND pass = PASSWORD(?)");
+
+
+        $requete = $bdd->prepare("SELECT * FROM membre WHERE email = ? AND pass = SHA1(?)");
         $requete->execute(array(
             $email, $pass));
+
 
         if ($requete->rowCount() > 0) {
             $rows = $requete->fetchall(PDO::FETCH_ASSOC);

@@ -61,6 +61,6 @@ class Membre
     public function getTelFixe(){return $this->_telFixe;}
     public function setTelFixe($telFixe){$this->_telFixe = $telFixe;}
 
-    public function getOrganisateur(){return $this->organisateur;}
+    public function getOrganisateur(){return $this->_organisateur;}
     public function setOrganisateur($organisateur){$this->_organisateur = $organisateur;}
 }

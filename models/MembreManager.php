@@ -23,7 +23,7 @@ class MembreManager extends Model
         $telFixe = $newMembre->getTelFixe();
         $organisateur = $newMembre->getOrganisateur();
         $bdd = Model::getBdd();
-        $requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe, organisateur ) VALUES (?, ?, ?, PASSWORD(?), ?, ?, ?, ?, ?, ?, ?, ?)");
+        $requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe, organisateur ) VALUES (?, ?, ?, SHA1(?), ?, ?, ?, ?, ?, ?, ?, ?)");
 
         $requete -> execute(array(
             $nom,

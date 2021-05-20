@@ -1,14 +1,14 @@
 Pour les liens de la Bdd --> ./assets/img/01.jpg
 
-INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Séminaire","./assets/img/02.jpg","PHP introduction =)","Langage PHP","150","2021-02-02","2001-02-08");
-INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/01.jpg","SQL introduction =)","Tout sur SQL","150","2021-01-02","2001-01-02");
+INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Séminaire","./assets/img/02.jpg","PHP introduction.","Langage PHP","150","2021-02-02","2001-02-08");
+INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/01.jpg","SQL introduction.","Tout sur SQL","150","2021-01-02","2001-01-02");
 INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/02.jpg","Design pattern","Ici nous allons apprendre les rudiments du design pattern MVC","150","2021-02-02","2001-02-02");
 INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/01.jpg","C# introduction =)","Apprenons le C Sharp","150","2021-02-02","2001-02-02");
 
-INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Séminaire","./assets/img/02.jpg","PHP introduction =)","DCA 'Devenir un collaborateur apprecié''","1200","2021-03-06","2001-03-010");
+INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Séminaire","./assets/img/02.jpg","DCA","DCA 'Devenir un collaborateur apprecié''","1200","2021-03-06","2001-03-010");
 INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/01.jpg","Excel astuces","Tout sur SQL","189","2021-01-02","2001-01-02");
 INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/02.jpg","Wordpress","CMS populaire, introduction","300","2021-07-12","2001-07-12");
-INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/01.jpg","C# introduction =)","Joomla CMS","450","2021-02-18","2001-02-18");
+INSERT INTO `activite`(`typeActivite`, `urlPhoto`, `intitule`, `description`, `tarif`, `dateDebut`, `dateFin`) VALUES ("Conférence","./assets/img/01.jpg","CMS encore !","Joomla CMS","450","2021-02-18","2001-02-18");
 
 
 #083b4c    #dea702    #edeae3    #fffffff

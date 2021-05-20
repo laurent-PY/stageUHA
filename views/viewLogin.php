@@ -7,7 +7,7 @@ if(isset($_POST['connexion'])) {
     if(LoginManager::checkLogin($membre) == true){
         ?>
         <div class="alert alert-success alertPopup" role="alert" style="height: 7vh">
-            Utilistateur authentifié.
+            Utilisateur authentifié.
         </div>
         <?php
     }else{
@@ -19,7 +19,6 @@ if(isset($_POST['connexion'])) {
     }
 }
 ?>
-
 <div class="blockLogin">
     <div class="titre">
         <h1>Connexion</h1>

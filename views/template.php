@@ -41,7 +41,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <li class="nav-item">
                         <?php if(isset($_SESSION['email'])) {
                             ?>
-                                <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/logout">Déconnexion</a>
+                            <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/logout">Déconnexion</a>
                             <?php
                         }else
                         { ?>
@@ -52,6 +52,14 @@ if (session_status() === PHP_SESSION_NONE) {
                         <?php if(isset($_SESSION['email'])) {
                             ?>
                             <a class="nav-item nav-link" href="">Mon Compte</a>
+                            <?php
+                        }?>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <?php if(isset($_SESSION['organisateur']) == true) {
+                            ?>
+                            <a class="nav-item nav-link" href="">Ajouter une activitée</a>
                             <?php
                         }?>
                     </li>
