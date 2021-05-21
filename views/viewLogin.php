@@ -35,7 +35,7 @@ if(isset($_POST['connexion'])) {
                 <div class="col">
                     <div class="form-outline">
                         <input type="password" id="pass" name="pass" class="form-control" />
-                        <label class="form-label" for="prenom">Password</label>
+                        <label class="form-label" for="pass">Password</label>
                     </div>
                 </div>
             </div>

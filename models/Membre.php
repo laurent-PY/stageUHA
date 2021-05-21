@@ -15,7 +15,7 @@ class Membre
     private $_pays;
     private $_telPortable;
     private $_telFixe;
-    private $_organisateur;
+    private $_status;
 
     //constructeur
     public function __construct()
@@ -23,7 +23,8 @@ class Membre
       
     }
 
-    public function getId(){return $this->_idMembre;}
+    public function getIdMembre(){return $this->_idMembre;}
+    public function setIdMembre($idMembre){$this->_idMembre = $idMembre;}
 
     public function getNom(){return $this->_nom;}
     public function setNom($nom){$this->_nom = $nom;}
@@ -61,6 +62,6 @@ class Membre
     public function getTelFixe(){return $this->_telFixe;}
     public function setTelFixe($telFixe){$this->_telFixe = $telFixe;}
 
-    public function getOrganisateur(){return $this->_organisateur;}
-    public function setOrganisateur($organisateur){$this->_organisateur = $organisateur;}
+    public function getStatus(){return $this->_status;}
+    public function setStatus($_status){$this->_status = $_status;}
 }

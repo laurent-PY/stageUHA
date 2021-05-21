@@ -55,16 +55,37 @@ if (session_status() === PHP_SESSION_NONE) {
                             <?php
                         }?>
                     </li>
-                    </li>
                     <li class="nav-item">
-                        <?php if(isset($_SESSION['organisateur']) == true) {
-                            ?>
-                            <a class="nav-item nav-link" href="">Ajouter une activitée</a>
-                            <?php
+                        <?php
+                        if(isset($_SESSION['status'])){
+                            if($_SESSION['status'] == 'admin'){
+                                ?>
+                                <a class="nav-item nav-link" href="">Droits administration activés</a>
+                                <?php
+                            }
                         }?>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link"><?php if(isset($_SESSION['email'])){?> Bonjour, <?= $_SESSION['email'] ?><?php } ?></a>
+                        <?php
+                        if(isset($_SESSION['status'])){
+                            if($_SESSION['status'] == 'admin'){
+                                ?>
+                                <a class="nav-item nav-link" href="">Ajouter une activitée</a>
+                                <?php
+                            }
+                        }?>
+                    </li>
+                    <li class="nav-item">
+                        <?php if(isset($_SESSION['status'])){
+                            if($_SESSION['status'] == 'organisateur'){
+                                ?>
+                                <a class="nav-item nav-link" href="">Ajouter une activitée</a>
+                                <?php
+                            }
+                        }?>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link"><?php if(isset($_SESSION['email'])){?> Bonjour, <?= $_SESSION['prenom'] ?><?php } ?></a>
                     </li>
                 </ul>
             </div>

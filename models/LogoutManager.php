@@ -7,10 +7,15 @@ class LogoutManager extends Model
     }
 
     public static function logout(){
+        // Démarrage ou restauration de la session
         session_start();
-        session_unset();
+        // Réinitialisation du tableau de session
+        // On le vide intégralement
+        $_SESSION = array();
+        // Destruction de la session
         session_destroy();
+        // Destruction du tableau de session
+        unset($_SESSION);
         header("location:accueil");
     }
-
 }
