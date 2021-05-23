@@ -10,13 +10,13 @@ class ControllerAccueil
         if(isset($url) && is_countable($url) > 1)
             throw new Exception('Page introuvable'); 
         else
-            $this->activites();
+            $this->accueil();
     }
 
-    private function activites()
+    private function accueil()
     {
-        $this->_activiteManager = new ActiviteManager;
-        $activites = $this->_activiteManager->getActivites();
+        $this->_activiteManager = new AccueilManager;
+        $activites = $this->_activiteManager->getAccueils();
         $this->_view = new View('Accueil');
         $this->_view->generate(array('activites' => $activites));
     }

@@ -29,23 +29,23 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-item nav-link active" href="http://localhost/StageMaiPHP/">Accueil</a>
+                        <a class="nav-item nav-link active" href="http://localhost/StageUHA/">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <?php if(!isset($_SESSION['email'])) {
                             ?>
-                            <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/membre">S'inscrire</a>
+                            <a class="nav-item nav-link" href="http://localhost/StageUHA/membre">S'inscrire</a>
                             <?php
                         }?>
                     </li>
                     <li class="nav-item">
                         <?php if(isset($_SESSION['email'])) {
                             ?>
-                            <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/logout">Déconnexion</a>
+                            <a class="nav-item nav-link" href="http://localhost/StageUHA/logout">Déconnexion</a>
                             <?php
                         }else
                         { ?>
-                            <a class="nav-item nav-link" href="http://localhost/StageMaiPHP/login">Connexion</a>
+                            <a class="nav-item nav-link" href="http://localhost/StageUHA/login">Connexion</a>
                         <?php } ?>
                     </li>
                     <li class="nav-item">

@@ -1,8 +1,8 @@
 <?php
 
-class ActiviteManager extends Model
+class AccueilManager extends Model
 {
-    public function getActivites()
+    public function getAccueils()
     {
         return $this->getAll('activite', 'Activite');
     }

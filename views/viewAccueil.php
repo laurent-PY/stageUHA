@@ -32,7 +32,6 @@ if(isset($_POST['activites'])){
                                 <?php
                             }else
                             { ?>
-<!--                            <p>Pour participer aux événement vous devez être authentifié.</p>-->
                                 <a href="#" class="btmCard btn btn-outline-secondary ">Consulter</a>
                             <?php } ?>
                         </div>
