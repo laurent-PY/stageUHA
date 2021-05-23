@@ -3,8 +3,6 @@ $this->_t = 'Register';
 
 include_once('./models/MembreManager.php');
 
-// TODO terminer le contrôle des champs, essayer de faire passer par la methode dans MembreManager::chekFields()
-
 if(isset($_POST['register'])) {
     $newMembre = new Membre();
     $newMembre->setNom($_POST['nom']);

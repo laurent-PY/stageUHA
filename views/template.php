@@ -79,7 +79,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         <?php if(isset($_SESSION['status'])){
                             if($_SESSION['status'] == 'organisateur'){
                                 ?>
-                                <a class="nav-item nav-link" href="">Ajouter une activitée</a>
+                                <a class="nav-item nav-link" href="http://localhost/StageUHA/Activite">Ajouter une activitée</a>
                                 <?php
                             }
                         }?>

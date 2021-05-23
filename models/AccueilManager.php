@@ -6,4 +6,8 @@ class AccueilManager extends Model
     {
         return $this->getAll('activite', 'Activite');
     }
+
+
+
+
 }

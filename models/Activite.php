@@ -1,9 +1,8 @@
 <?php
 
-
 class Activite
 {
-    private $_id;
+    private $_idActivite;
     private $_typeActivite;
     private $_urlPhoto;
     private $_intitule;
@@ -12,26 +11,17 @@ class Activite
     private $_dateDebut;
     private $_dateFin;
     private $_organisateur;
-    
+
+
     //constructeur
-    public function __construct(array $data)
+    public function __construct()
     {
-        $this->hydrate($data);
-    }
-    //Hydratation
-    public function hydrate(array $data)
-    {
-        foreach($data as $key => $value)
-        {
-            $method = 'set'.ucfirst($key);
 
-            if(method_exists($this, $method))
-                $this->$method($value);
-        }
     }
+
 
     
-    public function getId(){return $this->_id;}
+    public function getIdActivite(){return $this->_idActivite;}
     
     public function getTypeActivite(){return $this->_typeActivite;}
     public function setTypeActivite($typeActivite){$this->_typeActivite = $typeActivite;}

@@ -2,7 +2,7 @@
 require_once('views/View.php');
 class ControllerAccueil
 {
-    private $_activiteManager;
+    private $_accueilManager;
     private $_view;
 
     public function __construct($url)
@@ -15,9 +15,9 @@ class ControllerAccueil
 
     private function accueil()
     {
-        $this->_activiteManager = new AccueilManager;
-        $activites = $this->_activiteManager->getAccueils();
+        $this->_accueilManager = new AccueilManager;
+        $accueils = $this->_accueilManager->getAccueils();
         $this->_view = new View('Accueil');
-        $this->_view->generate(array('activites' => $activites));
+        $this->_view->generate(array('accueils' => $accueils));
     }
 }
