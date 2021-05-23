@@ -22,7 +22,7 @@ class MembreManager extends Model
         $telPortable = $newMembre->getTelPortable();
         $telFixe = $newMembre->getTelFixe();
         $status = $newMembre->getStatus();
-        
+
         $bdd = Model::getBdd();
         $requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe, status ) VALUES (?, ?, ?, SHA1(?), ?, ?, ?, ?, ?, ?, ?, ?)");
 
@@ -74,10 +74,13 @@ class MembreManager extends Model
     public static function checkMail(Membre $newMembre)
     {
         $bdd = Model::getBdd();
-        $requete = $bdd->prepare('SELECT COUNT(*) FROM membre WHERE email = '. '"' . $newMembre->getEmail() . '"');
-        $requete->execute();
-        $row = $requete->fetch();
-        if($row[0] > 0){
+        $email = $newMembre->getEmail();
+        $requete = $bdd->prepare('SELECT * FROM membre WHERE email = ?');
+        $requete->execute(array(
+            $email
+        ));
+        $requete->fetch();
+        if($requete->rowCount() > 0){
             return true;
         }else{
             return false;
