@@ -23,10 +23,14 @@ $this->_t = 'Accueil MVC';
                         <div class="card-body">
                             <h5 class="card-title"><?= $accueil['typeActivite'] ?></h5>
                             <p class="card-text"><?= $accueil['intitule'] ?></p>
-                            <p class="card-text"><?= $accueil['description']?></p>
+                            <?php
+                            ?><p><?php $accueil['description'] = substr($accueil['description'], 0, 30);
+                            echo $accueil['description']."(...)";?></p><?php
+                            ?>
                             <p class="card-text"><?= $accueil['tarif']?> Euros (TTC)</p>
                             <p class="card-text"><?= $accueil['dateDebut'] ?></p>
                             <p class="card-text"><?= $accueil['dateFin'] ?></p>
+                            <p class="card-text"><?= $accueil['urlZoom'] ?></p>
                             <?php if(isset($_SESSION['email'])) {
                                 ?>
                                 <a href="#" class="btmCard btn btn-outline-secondary ">Participer</a>

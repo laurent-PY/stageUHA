@@ -17,12 +17,11 @@ class ActiviteManager extends Model
         $tarif = $newEvenement->getTarif();
         $dateDebut = $newEvenement->getDateDebut();
         $dateFin = $newEvenement->getDateFin();
-//        var_dump($intitule);
-//        die();
+        $urlZoom = $newEvenement->getUrlZoom();
 
         $bdd = Model::getBdd();
 
-        $requete = $bdd->prepare("INSERT INTO activite(typeActivite, urlPhoto, intitule, description, tarif, dateDebut, dateFin) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $requete = $bdd->prepare("INSERT INTO activite(typeActivite, urlPhoto, intitule, description, tarif, dateDebut, dateFin, urlZoom) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
 
         $requete -> execute(array(
@@ -32,7 +31,8 @@ class ActiviteManager extends Model
             $description,
             $tarif,
             $dateDebut,
-            $dateFin
+            $dateFin,
+            $urlZoom
         ));
     }
 

@@ -49,6 +49,7 @@ if(isset($_POST['enregistrer'])) {
     $newEvenement->setTarif($_POST['tarif']);
     $newEvenement->setDateDebut($_POST['dateDebut']);
     $newEvenement->setDateFin($_POST['dateFin']);
+    $newEvenement->setUrlZoom($_POST['urlZoom']);
 
     ActiviteManager::insertActivite($newEvenement);
 }
@@ -74,6 +75,7 @@ if(isset($_POST['enregistrer'])) {
             <label class="form-label" for="intitule">titre *</label>
             <input type="text" name="intitule" class="form-control" value="<?php if (isset($_POST['intitule'])){echo $_POST['intitule'];} ?>"/>
         </div>
+
         <div class="form-outline mb4">
             <label class="form-label" for="intitule">Image *</label>
             <div class="accordion">
@@ -184,6 +186,12 @@ if(isset($_POST['enregistrer'])) {
         <div class="form-outline mb-4">
             <label class="form-label" for="dateFin">Date fin événement *</label>
             <input type="date" name="dateFin" class="form-control"/>
+        </div>
+
+        <!-- urlZoom input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="urlZoom">Url zoom de la conférence *</label>
+            <input class="form-control" name="urlZoom" rows="3" value="<?php if (isset($_POST['urlZoom'])){echo $_POST['urlZoom'];} ?>"/>
 
         </div>
 

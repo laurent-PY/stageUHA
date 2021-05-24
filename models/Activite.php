@@ -11,6 +11,10 @@ class Activite
     private $_dateDebut;
     private $_dateFin;
     private $_organisateur;
+    private $_urlZoom;
+
+
+
 
 
     //constructeur
@@ -46,4 +50,7 @@ class Activite
     
     public function getOrganisateur(){return $this->_organisateur;}
     public function setOrganisateur($organisateur){$this->_organisateur = $organisateur;}
+
+    public function getUrlZoom(){return $this->_urlZoom;}
+    public function setUrlZoom($urlZoom){ $this->_urlZoom = $urlZoom;}
 }
