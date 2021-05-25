@@ -28,8 +28,8 @@ $this->_t = 'Accueil MVC';
                             echo $accueil['description']."(...)";?></p><?php
                             ?>
                             <p class="card-text"><?= $accueil['tarif']?> Euros (TTC)</p>
-                            <p class="card-text"><?= $accueil['dateDebut'] ?></p>
-                            <p class="card-text"><?= $accueil['dateFin'] ?></p>
+                            <p class="card-text"><?php $timeStamp = strtotime($accueil['dateDebut']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
+                            <p class="card-text"><?php $timeStamp = strtotime($accueil['dateFin']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
                             <p class="card-text"><?= $accueil['urlZoom'] ?></p>
                             <?php if(isset($_SESSION['email'])) {
                                 ?>

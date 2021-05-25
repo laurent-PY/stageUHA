@@ -61,17 +61,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         if(isset($_SESSION['status'])){
                             if($_SESSION['status'] == 'admin'){
                                 ?>
-                                <a class="nav-item nav-link" href="">Droits administration activés</a>
-                                <?php
-                            }
-                        }?>
-                    </li>
-                    <li class="nav-item">
-                        <?php
-                        if(isset($_SESSION['status'])){
-                            if($_SESSION['status'] == 'admin'){
-                                ?>
-                                <a class="nav-item nav-link" href="">Ajouter une activitée</a>
+                                <a class="nav-item nav-link" href="">Administration membres & activitées</a>
                                 <?php
                             }
                         }?>
