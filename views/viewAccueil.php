@@ -5,7 +5,6 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 $this->_t = 'Accueil MVC';
 ?>
-
 <div class="container">
     <div class="titre">
         <h1 >Catalogue des séminaires et conférence disponibles</h1>
@@ -14,7 +13,6 @@ $this->_t = 'Accueil MVC';
         <?php
             $newActivites = new Activite();
             $accueils = ActiviteManager::getActivite();
-
         foreach($accueils as $accueil): ?>
             <div class="blockContent">
                 <div class="row">
@@ -30,10 +28,10 @@ $this->_t = 'Accueil MVC';
                             <p class="card-text"><?= $accueil['tarif']?> Euros (TTC)</p>
                             <p class="card-text"><?php $timeStamp = strtotime($accueil['dateDebut']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
                             <p class="card-text"><?php $timeStamp = strtotime($accueil['dateFin']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
-                            <p class="card-text"><?= $accueil['urlZoom'] ?></p>
+                            <p class="card-text"><?php if(isset($_SESSION['status'])){if(($_SESSION['status'] == 'organisateur') || ($_SESSION['status'] == 'membre'))  echo $accueil['urlZoom'];} ?></p>
                             <?php if(isset($_SESSION['email'])) {
                                 ?>
-                                <a href="#" class="btmCard btn btn-outline-secondary ">Participer</a>
+                                <a href="#" class="btmCard btn btn-outline-secondary ">Participer <?= $accueil['idActivite'] ?></a>
                                 <?php
                             }else
                             { ?>
