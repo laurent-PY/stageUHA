@@ -7,11 +7,9 @@ if (session_status() === PHP_SESSION_NONE) {
 $this->_t = 'Accueil MVC';
 if(isset($_POST['consulter'])){
 
-
     $id = $_POST['id'];
-    header("location:detail");
     DetailManager::detail($id);
-
+    header("location:detail");
 
 }
 
@@ -41,10 +39,10 @@ if(isset($_POST['consulter'])){
                             <p class="card-text"><?php $timeStamp = strtotime($accueil['dateFin']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
                             <p class="card-text"><?php if(isset($_SESSION['status'])){if(($_SESSION['status'] == 'organisateur') || ($_SESSION['status'] == 'membre'))  echo $accueil['urlZoom'];} ?></p>
                             <form method="post">
-                                <input name="id" type="hidden" value="<?= $id = $accueil['idActivite']; ?>">
+                                <input name="id" type="text" value="<?= $id = $accueil['idActivite']; ?>">
                                 <input name="consulter" type="submit" value="Consulter">
                             </form>
-                            <a class="btmCard btn btn-outline-secondary" href="http://localhost/StageUHA/detail">Consulter</a>
+<!--                            <a class="btmCard btn btn-outline-secondary" href="http://localhost/StageUHA/detail">Consulter</a>-->
                         </div>
                     </div>
                 </div>

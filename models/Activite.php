@@ -23,9 +23,8 @@ class Activite
 
     }
 
-
-    
     public function getIdActivite(){return $this->_idActivite;}
+    public function setIdActivite($idActivite){$this->_idActivite = $idActivite;}
     
     public function getTypeActivite(){return $this->_typeActivite;}
     public function setTypeActivite($typeActivite){$this->_typeActivite = $typeActivite;}
