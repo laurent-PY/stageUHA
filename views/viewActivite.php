@@ -49,6 +49,7 @@ if(isset($_POST['enregistrer'])) {
     $newEvenement->setTarif($_POST['tarif']);
     $newEvenement->setDateDebut($_POST['dateDebut']);
     $newEvenement->setDateFin($_POST['dateFin']);
+    $newEvenement->setOrganisateur($_SESSION['prenom']);
     $newEvenement->setUrlZoom($_POST['urlZoom']);
 
     ActiviteManager::insertActivite($newEvenement);

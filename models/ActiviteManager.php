@@ -10,6 +10,7 @@ class ActiviteManager extends Model
 
     public static function insertActivite(Activite $newEvenement){
 
+
         $typeActivite = $newEvenement->getTypeActivite();
         $urlPhoto = $newEvenement->getUrlPhoto();
         $intitule = $newEvenement->getIntitule();
@@ -17,11 +18,14 @@ class ActiviteManager extends Model
         $tarif = $newEvenement->getTarif();
         $dateDebut = $newEvenement->getDateDebut();
         $dateFin = $newEvenement->getDateFin();
+        $organisateur = $newEvenement->getOrganisateur();
+
+
         $urlZoom = $newEvenement->getUrlZoom();
 
         $bdd = Model::getBdd();
 
-        $requete = $bdd->prepare("INSERT INTO activite(typeActivite, urlPhoto, intitule, description, tarif, dateDebut, dateFin, urlZoom) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $requete = $bdd->prepare("INSERT INTO activite(typeActivite, urlPhoto, intitule, description, tarif, dateDebut, dateFin, organisateur, urlZoom) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 
         $requete -> execute(array(
@@ -32,8 +36,10 @@ class ActiviteManager extends Model
             $tarif,
             $dateDebut,
             $dateFin,
+            $organisateur,
             $urlZoom
         ));
+        header("location:accueil");
     }
 
 

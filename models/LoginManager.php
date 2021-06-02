@@ -33,13 +33,14 @@ class LoginManager extends Model
                 $membreStatus->setPays($ligne['pays']);
                 $membreStatus->setTelPortable($ligne['telPortable']);
                 $membreStatus->setTelFixe($ligne['telFixe']);
+                $membreStatus->setTelFixe($ligne['telFixe']);
                 $membreStatus->setStatus($ligne['status']);
 
             }
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['status'] = $membreStatus->getStatus();
-            $_SESSION['prenom'] = $membreStatus->getPrenom();
+            $_SESSION['prenom'] = $membreStatus->getPrenom()." ".$membreStatus->getNom();
 
             header("location:accueil");
         }

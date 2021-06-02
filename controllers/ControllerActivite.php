@@ -1,6 +1,5 @@
 <?php
 require_once('views/View.php');
-
 class ControllerActivite
 {
     private $_activiteManager;

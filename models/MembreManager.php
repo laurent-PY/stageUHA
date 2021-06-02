@@ -21,7 +21,7 @@ class MembreManager extends Model
         $pays = $newMembre->getPays();
         $telPortable = $newMembre->getTelPortable();
         $telFixe = $newMembre->getTelFixe();
-        $status = $newMembre->getStatus();
+        $status = 'membre';
 
         $bdd = Model::getBdd();
         $requete = $bdd->prepare("INSERT INTO membre(nom, prenom, email, pass, dateNaissance, adresse, nomVille, cpVille, pays, telportable, telfixe, status ) VALUES (?, ?, ?, SHA1(?), ?, ?, ?, ?, ?, ?, ?, ?)");

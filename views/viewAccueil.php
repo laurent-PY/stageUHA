@@ -1,22 +1,33 @@
 <?php
 include_once('./models/ActiviteManager.php');
+include_once('./models/DetailManager.php');
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 $this->_t = 'Accueil MVC';
+if(isset($_POST['consulter'])){
+
+
+    $id = $_POST['id'];
+    header("location:detail");
+    DetailManager::detail($id);
+
+
+}
+
+
 ?>
 <div class="container">
     <div class="titre">
-        <h1 >Catalogue des séminaires et conférence disponibles</h1>
+        <h1>Catalogue des séminaires et conférence disponibles</h1>
     </div>
     <div class="blockContent">
         <?php
-            $newActivites = new Activite();
             $accueils = ActiviteManager::getActivite();
         foreach($accueils as $accueil): ?>
             <div class="blockContent">
                 <div class="row">
-                    <div class="card" style="width: 15vw;height: 70vh;margin: 15px" >
+                    <div class="card" style="width: 15vw;height: 70vh; margin: 0 15px 0 15px" >
                         <img src="<?= $accueil['urlPhoto'] ?>" class="card-img-top" style="margin-top: 10px" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?= $accueil['typeActivite'] ?></h5>
@@ -29,14 +40,11 @@ $this->_t = 'Accueil MVC';
                             <p class="card-text"><?php $timeStamp = strtotime($accueil['dateDebut']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
                             <p class="card-text"><?php $timeStamp = strtotime($accueil['dateFin']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
                             <p class="card-text"><?php if(isset($_SESSION['status'])){if(($_SESSION['status'] == 'organisateur') || ($_SESSION['status'] == 'membre'))  echo $accueil['urlZoom'];} ?></p>
-                            <?php if(isset($_SESSION['email'])) {
-                                ?>
-                                <a href="#" class="btmCard btn btn-outline-secondary ">Participer <?= $accueil['idActivite'] ?></a>
-                                <?php
-                            }else
-                            { ?>
-                                <a href="#" class="btmCard btn btn-outline-secondary ">Consulter</a>
-                            <?php } ?>
+                            <form method="post">
+                                <input name="id" type="hidden" value="<?= $id = $accueil['idActivite']; ?>">
+                                <input name="consulter" type="submit" value="Consulter">
+                            </form>
+                            <a class="btmCard btn btn-outline-secondary" href="http://localhost/StageUHA/detail">Consulter</a>
                         </div>
                     </div>
                 </div>

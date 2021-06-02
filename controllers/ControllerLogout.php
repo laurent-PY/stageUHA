@@ -1,5 +1,5 @@
 <?php
-
+require_once('views/View.php');
 
 class ControllerLogout
 {
@@ -11,13 +11,13 @@ class ControllerLogout
         if(isset($url) && is_countable($url) > 1)
             throw new Exception('Page introuvable');
         else
-            $this->logouts();
+            $this->logout();
     }
 
-    private function logouts()
+    private function logout()
     {
         $this->_logoutManager = new LogoutManager;
-        $logouts = $this->_logoutManager->getlogout();
+        $logouts = $this->_logoutManager->getLogout();
         $this->_view = new View('Logout');
         $this->_view->generate(array('logouts' => $logouts));
     }

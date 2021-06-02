@@ -16,6 +16,7 @@ CREATE TABLE activite(
                          tarif        Float NOT NULL ,
                          dateDebut    Date NOT NULL ,
                          dateFin      Date NOT NULL ,
+                         organisateur Varchar (50) NOT NULL ,
                          urlZoom      Varchar (50) NOT NULL
     ,CONSTRAINT activite_PK PRIMARY KEY (idActivite)
 )ENGINE=InnoDB;
@@ -38,7 +39,7 @@ CREATE TABLE membre(
                        pays          Varchar (150) NOT NULL ,
                        telPortable   Varchar (10) NOT NULL ,
                        telFixe       Varchar (10) NOT NULL ,
-                       status        Varchar (50) NOT NULL
+                       status        Varchar (50)
     ,CONSTRAINT membre_PK PRIMARY KEY (idMembre)
 )ENGINE=InnoDB;
 
