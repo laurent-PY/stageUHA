@@ -12,7 +12,7 @@ CREATE TABLE activite(
                          typeActivite Varchar (30) NOT NULL ,
                          urlPhoto     Varchar (150) NOT NULL ,
                          intitule     Varchar (150) NOT NULL ,
-                         description  Varchar (255) NOT NULL ,
+                         description  Text NOT NULL ,
                          tarif        Float NOT NULL ,
                          dateDebut    Date NOT NULL ,
                          dateFin      Date NOT NULL ,

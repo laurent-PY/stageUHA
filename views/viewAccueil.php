@@ -1,19 +1,16 @@
 <?php
-include_once('./models/ActiviteManager.php');
-include_once('./models/DetailManager.php');
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 $this->_t = 'Accueil MVC';
 if(isset($_POST['consulter'])){
-
     $id = $_POST['id'];
-    DetailManager::detail($id);
-    header("location:detail");
-
+    if(DetailManager::detail($id)){
+        $_SESSION['idActivite'] = $id;
+        header("location:detail");
+    }
 }
-
-
 ?>
 <div class="container">
     <div class="titre">
@@ -21,7 +18,7 @@ if(isset($_POST['consulter'])){
     </div>
     <div class="blockContent">
         <?php
-            $accueils = ActiviteManager::getActivite();
+        $accueils = ActiviteManager::getActivite();
         foreach($accueils as $accueil): ?>
             <div class="blockContent">
                 <div class="row">
@@ -32,17 +29,16 @@ if(isset($_POST['consulter'])){
                             <p class="card-text"><?= $accueil['intitule'] ?></p>
                             <?php
                             ?><p><?php $accueil['description'] = substr($accueil['description'], 0, 30);
-                            echo $accueil['description']."(...)";?></p><?php
+                                echo $accueil['description']."(...)";?></p><?php
                             ?>
                             <p class="card-text"><?= $accueil['tarif']?> Euros (TTC)</p>
                             <p class="card-text"><?php $timeStamp = strtotime($accueil['dateDebut']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
                             <p class="card-text"><?php $timeStamp = strtotime($accueil['dateFin']); $dateUTC = date("d-m-Y", $timeStamp); echo $dateUTC?></p>
                             <p class="card-text"><?php if(isset($_SESSION['status'])){if(($_SESSION['status'] == 'organisateur') || ($_SESSION['status'] == 'membre'))  echo $accueil['urlZoom'];} ?></p>
                             <form method="post">
-                                <input name="id" type="text" value="<?= $id = $accueil['idActivite']; ?>">
-                                <input name="consulter" type="submit" value="Consulter">
+                                <input name="id" type="hidden" value="<?= $accueil['idActivite']; ?>">
+                                <input class="btmCard btn btn-outline-secondary" name="consulter" type="submit" value="Consulter">
                             </form>
-<!--                            <a class="btmCard btn btn-outline-secondary" href="http://localhost/StageUHA/detail">Consulter</a>-->
                         </div>
                     </div>
                 </div>

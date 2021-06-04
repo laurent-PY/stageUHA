@@ -8,8 +8,6 @@ class DetailManager extends Model
         return $this->getAll('activite', 'Activite');
     }
 
-
-
     public static function detail($id){
 
         $bdd = Model::getBdd();
@@ -17,9 +15,7 @@ class DetailManager extends Model
         $requete->execute(array(
             $id
         ));
-
-        $lignes = $requete->fetchAll((PDO::FETCH_ASSOC));
-
+        $lignes = $requete->fetch(PDO::FETCH_ASSOC);
         return $lignes;
     }
 }
